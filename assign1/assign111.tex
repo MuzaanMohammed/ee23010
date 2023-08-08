@@ -307,8 +307,7 @@ EE22BTECH11036
 \textbf{Question 1.4.1}
 %\bigbreak
 Consider a triangle with vertices
-\begin{center}
-    
+\begin{center}   
 $\vec{A} =
 \myvec{
 3 \\
@@ -325,102 +324,98 @@ $\vec{C} =
 -5
 }$
 \end{center}
-
 The equation of the perpendicular bisector of $BC$ is 
 \begin{align}
 \brak{\vec{x}-\frac{\vec{B}+\vec{C}}{2}}\brak{\vec{B}-\vec{C}}=0
 \end{align}
-To find the equations of perpendicular bisectors of $AB$,$BC$,$CA$.\\
+To find the equations of perpendicular bisectors of $AB$,$BC$,$CA$.
 \bigbreak
-\textbf{Solution:}
-
+\solution
 \begin{enumerate}
-    \item $BC$:
- 
-
-Given equation for the perpendicular bisector of $BC$: \\
-\brak{\vec{x}-\frac{\vec{B}+\vec{C}}{2}}\brak{\vec{B}-\vec{C}}=0\\
+\item $BC$:
+Given equation for the perpendicular bisector of $BC$:
+\begin{align} 
+\brak{\vec{x}-\frac{\vec{B}+\vec{C}}{2}}\brak{\vec{B}-\vec{C}}=0
+\end{align}
 On substituting the values,
 \begin{align}
-    \vec{\frac{\vec{B}+\vec{C}}{2}} = \myvec{-\frac{7}{2} \\ \frac{1}{2}}
-    \end{align}
-    \begin{align}
-    \vec{B}-\vec{C} = \myvec{-1 \\ 11} 
-    \end{align}
-Solving using matrix multiplication
-
-
-\text{The required equation is:}
+\vec{\frac{\vec{B}+\vec{C}}{2}} = \myvec{-\frac{7}{2} \\ \frac{1}{2}}
+\end{align}
 \begin{align}
-    \brak{\vec{B}-\vec{C}}^\top\brak{\vec{x}-\frac{\vec{B}+\vec{C}}{2}}=0
-    \end{align}
-    \begin{align}
-        \implies\brak{\vec{B}-\vec{C}}^{\top}\vec{x}&=\brak{\vec{B}-\vec{C}}^{\top}\brak{\frac{\vec{B}+\vec{C}}{2}}
-    \end{align}
-    
-   \begin{center} 
-         $\brak{\vec{B}-\vec{C}}^\top=\myvec{-1&11}$
-   \end{center}
-    \begin{align}   
-        \brak{\vec{B}-\vec{C}}^{\top}\brak{\frac{\vec{B}+\vec{C}}{2}}&=\myvec{-1&11}\myvec{-\frac{7}{2} \\ \frac{1}{2}}&=9
-    \end{align}
- \text{Therefore,from (5)}\\
- \text{Perpendicular bisector of BC is}
- \begin{center}
-    $\myvec{-1&11}\vec{x}=9$
- \end{center} 
-
-\item $AB$:\\
+\vec{B}-\vec{C} = \myvec{-1 \\ 11} 
+\end{align}
+Solving using matrix multiplication\begin{align}
+\brak{\vec{A}-\vec{B}}^{\top}\brak{\frac{\vec{A}+\vec{B}}{2}} \
+&= \myvec{7&-2}\myvec{-\frac{1}{2} \ 5} \
+&= -\frac{27}{2}
+\end{align}
+The required equation is:
+\begin{align}
+\brak{\vec{B}-\vec{C}}^\top\brak{\vec{x}-\frac{\vec{B}+\vec{C}}{2}}=0
+\end{align}
+\begin{align}
+\implies\brak{\vec{B}-\vec{C}}^{\top}\vec{x}&=\brak{\vec{B}-\vec{C}}^{\top}\brak{\frac{\vec{B}+\vec{C}}{2}}
+\end{align}
+\begin{center} 
+$\brak{\vec{B}-\vec{C}}^\top=\myvec{-1&11}$
+\end{center}
+\begin{align}   
+\notag\brak{\vec{B}-\vec{C}}^{\top}\brak{\frac{\vec{B}+\vec{C}}{2}}
+=\myvec{-1&11}\myvec{-\frac{7}{2} \\ \frac{1}{2}}\\
+=9
+\end{align}
+Therefore,from (5)\\
+Perpendicular bisector of BC is
+\begin{center}
+$\myvec{-1&11}\vec{x}=9$
+\end{center} 
+\item $AB$:
 Similar to the equation for the perpendicular bisector of $BC$,
 \begin{align}
-     \vec{\frac{\vec{A}+\vec{B}}{2}} &= \myvec{-\frac{1}{2} \\ 5}
-    \end{align} 
-   
-  
-   \begin{align}
-    \vec{A}-\vec{B} &= \myvec{7\\ -2} 
-    \end{align}
-    \text{And,}
-    \begin{align}
-    \brak{\vec{A}-\vec{B}}^{\top}&=\myvec{7&-2}
+\vec{\frac{\vec{A}+\vec{B}}{2}} &= \myvec{-\frac{1}{2} \\ 5}
+\end{align} 
+\begin{align}
+\vec{A}-\vec{B} &= \myvec{7\\ -2} 
 \end{align}
-    \begin{align}   
-        \brak{\vec{A}-\vec{B}}^{\top}\brak{\frac{\vec{A}+\vec{B}}{2}}&=\myvec{7&-2}\myvec{-\frac{1}{2} \\ 5}&=-13.50
-    \end{align}
-    \text{Therefore,perpendicular bisector of AB is}
-    \begin{center}
-        $\myvec{7 &-2}\vec{x}=-13.50$
-        \end{center}
-        
-        \item $CA$:\\
-        %Similar to the equation for the perpendicular bisector of $BC$,
-        \begin{align}
-             \vec{\frac{\vec{C}+\vec{A}}{2}} &= \myvec{0\\-\frac{1}{2} }
-            \end{align} 
-           
-          
-           \begin{align}
-            \vec{C}-\vec{A} &= \myvec{-6\\ -9} 
-            \end{align}
-            \text{And,}
-            \begin{align}
-            \brak{\vec{C}-\vec{A}}^{\top}&=\myvec{-6&-9}
-        \end{align}
-            \begin{align}   
-                \brak{\vec{C}-\vec{A}}^{\top}\brak{\frac{\vec{C}+\vec{A}}{2}}&=\myvec{-6&-9}\myvec{0\\-\frac{1}{2}}&=4.50
-            \end{align}
-            \text{Therefore,perpendicular bisector of CA is}
-            \begin{center}
-                $\myvec{-6 &-9}\vec{x}=4.50$
-                \end{center}
-
-
-
+And,
+\begin{align}
+\brak{\vec{A}-\vec{B}}^{\top}&=\myvec{7&-2}
+\end{align}
+\begin{align}   
+\notag\brak{\vec{A}-\vec{B}}^{\top}\brak{\frac{\vec{A}+\vec{B}}{2}}
+=\myvec{7&-2}\myvec{-\frac{1}{2} \\ 5} \\
+=\frac{27}{2}
+\end{align}
+Therefore,perpendicular bisector of AB is
+\begin{center}
+$\myvec{7 &-2}\vec{x}=-\frac{27}{2}$
+\end{center}    
+\item $CA$:
+%Similar to the equation for the perpendicular bisector of $BC$,
+\begin{align}
+\vec{\frac{\vec{C}+\vec{A}}{2}} &= \myvec{0\\-\frac{1}{2} }
+\end{align} 
+\begin{align}
+\vec{C}-\vec{A} &= \myvec{-6\\ -9} 
+\end{align}
+And,
+\begin{align}
+\brak{\vec{C}-\vec{A}}^{\top}&=\myvec{-6&-9}
+\end{align}
+\begin{align}   
+\notag\brak{\vec{C}-\vec{A}}^{\top}\brak{\frac{\vec{C}+\vec{A}}{2}}
+=\myvec{-6&-9}\myvec{0\\-\frac{1}{2}}\\
+=\frac{9}{2}
+\end{align}
+Therefore,perpendicular bisector of CA is
+\begin{center}
+$\myvec{-6 &-9}\vec{x}=\frac{9}{2}$
+\end{center}
 \begin{figure}
-    \centering
-    \includegraphics[width=\columnwidth]{pic.png}
-    \caption{Plot of the perpendicular bisectors}
-    \label{fig:figure1}
+\centering
+\includegraphics[width=\columnwidth]{pic.png}
+\caption{Plot of the perpendicular bisectors}
+\label{fig:figure1}
 \end{figure}
 \end{enumerate}
 \end{document}
