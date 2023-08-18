@@ -1,9 +1,10 @@
-#total number of students
-T = 23
-#number of students in each house
-A, B, C, D = 4, 8, 5, 2
-E = T - (A + B + C + D)
-#no of students not in A,B and C
-W = T - (A + B + C)
-print("The probability that the selected student is not from A, B, and C is:")
-print(W, '/', T, '=', W / T)
+import numpy as np
+# Number of students in the class
+total_students = 23
+# Array representing the number of students from each house: A, B, C, D, E
+students_per_house = np.array([4, 8, 5, 2, total_students - (4+8+5+2)])
+# Calculate the total number of students from houses A, B, and C using NumPy
+total_students_abc = np.sum(students_per_house[:3])
+# Calculate the probability that the selected student is not from A, B, or C using NumPy
+probability_not_abc = (total_students-total_students_abc) / total_students
+print("Probability that the selected student is not from A, B, or C:",(total_students-total_students_abc),'/',total_students,'=',probability_not_abc)

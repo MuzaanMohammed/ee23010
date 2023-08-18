@@ -260,7 +260,7 @@ EE22BTECH11036
 
 % make the title area
 \maketitle
-%\newpage
+\newpage
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
@@ -298,25 +298,35 @@ EE22BTECH11036
 A school has five houses A, B, C, D and E. A class has 23 students, 4 from house
 A, 8 from house B, 5 from house C, 2 from house D and rest from house E. A
 single student is selected at random to be the class monitor. The probability that the
-selected student is not from A, B and C is ?
+selected student is not from A, B and C is \\
 \solution
+\begin{table}[h]
+  \input{tables/table1}
+  \caption{Student distribution in each house}
+  \label{tab:Table1}
+  \end{table}
 \begin{align}
-\text{Number of students in the class}&=n\brak{T}\\
-&=23
-\end{align}
-
-W=selected student is not from A,B and C.
-
-No of students in A,B and C=4+8+5=17
-\begin{align}
-n\brak{W}&=\text{Remaining no of students}\\
-&=23-17\\
-&=6\\
-\pr{W}&=\frac{n\brak{W}}{n\brak{T}}\\
-&=\frac{6}{23}
-\end{align}
-Therefore,probability of not selecting a student from A,B and C is,
-\begin{align}
-\pr{W}&=\frac{6}{23}
+  W=\text{student selected is not from A,B and C}\\
+  \implies W=\brak{\overline{A}}\brak{\overline{B}}\brak{\overline{C}}\\
+  \text{Total no of students}=n\brak{T}=23
+\end{align} 
+By DeMorgan's Law and Axiom 3 of probability
+\begin{align} 
+   \pr{\brak{\overline{A}}\brak{\overline{B}}\brak{\overline{C}}}=\pr{\overline{\brak{A+B+C}}}\\
+   \pr{\overline{\brak{A+B+C}}}=1-\pr{\brak{A+B+C}}\\
+    \pr{\brak{A+B+C}}=\pr{A}+\pr{B}+\pr{C}\\
+    \pr{\text{selecting a student from house A}}= \frac{n\brak{A}}{n\brak{T}}
+  \end{align}
+\begin{align} 
+  \pr{A}&=\frac{4}{23}\\
+  \pr{B}&=\frac{8}{23}\\
+  \pr{C}&=\frac{5}{23}\\
+  \pr{\brak{A+B+C}}&=\frac{4}{23}+\frac{8}{23}+\frac{5}{23}\\
+  &=\frac{17}{23}\\
+  \pr{\overline{A}\overline{B}\overline{C}}&=1-\frac{17}{23}=\frac{6}{23}
+  \end{align}
+  Therefore,probability of not selecting a student from A,B and C is,
+   \begin{align}
+  \pr{W}&=\frac{6}{23}
 \end{align}
 \end{document}
