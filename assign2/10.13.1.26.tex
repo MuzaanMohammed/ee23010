@@ -306,28 +306,29 @@ selected student is not from A, B and C is \\
   \label{tab:Table1}
   \end{table}
   Total no of students=23
-  
+
+  With reference to Table.~\ref{tab:Table1}
+\begin{align} 
+  \notag\pr{A}&=\frac{4}{23},
+  \pr{B}=\frac{8}{23},
+  \pr{C}=\frac{5}{23}\\
+  \pr{D}&=\frac{2}{23}.
+  \pr{E}=\frac{4}{23}
+  \end{align}
   W=student selected is not from A,B and C
 \begin{align}
   \implies W=A^{\prime}B^{\prime}C^{\prime}
 \end{align} 
 By DeMorgan's Law and Axiom 3 of probability
 \begin{align} 
-   p_X\brak{{A^{\prime}}B^{\prime}C^{\prime}}= p_X\brak{{\brak{A+B+C}^{\prime}}}\\
-   p_X\brak{{\brak{A+B+C}^{\prime}}}=1-p_X\brak{\brak{A+B+C}}\\
-   p_X\brak{A+B+C}= p_X\brak{A}+p_X\brak{B}+p_X\brak{C}
-  \end{align}
-  With reference to Table.~\ref{tab:Table1}
-\begin{align} 
-  p_X\brak{A}=\frac{4}{23},
-  p_X\brak{B}=\frac{8}{23},
-  p_X\brak{C}=\frac{5}{23}\\
-  p_X\brak{A+B+C}=\frac{4}{23}+\frac{8}{23}+\frac{5}{23}\\
-  =\frac{17}{23}\\
-  p_X\brak{A^{\prime}B^{\prime}C^{\prime}}=1-\frac{17}{23}=\frac{6}{23}
+   \pr{{A^{\prime}}B^{\prime}C^{\prime}}= \pr{{\brak{A+B+C}^{\prime}}}\\
+   \pr{{\brak{A+B+C}^{\prime}}}=1-\pr{\brak{A+B+C}}\\
+   \pr{A+B+C}= \pr{A}+\pr{B}+\pr{C}\\
+  \pr{A+B+C}=\frac{4}{23}+\frac{8}{23}+\frac{5}{23}=\frac{17}{23}\\
+  \pr{A^{\prime}B^{\prime}C^{\prime}}=1-\frac{17}{23}=\frac{6}{23}
   \end{align}
   Therefore,probability of not selecting a student from A,B and C is,
    \begin{align}
-    p_X\brak{W}&=\frac{6}{23}
+    \pr{W}&=\frac{6}{23}
 \end{align}
 \end{document}

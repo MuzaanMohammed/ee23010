@@ -123,13 +123,14 @@
 \setlongtables
 
 \setlength\gnumericTableWidth{%
+    53pt+%
 	53pt+%
 	53pt+%
 	53pt+%
 	53pt+%
 	53pt+%
 0pt}
-\def\gumericNumCols{5}
+\def\gumericNumCols{6}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
          \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
 \ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
@@ -146,7 +147,7 @@
 %% Depending on the cell formats we may use them more than once.    %%
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColE}}{\newlength{\gnumericColE}}{}\settowidth{\gnumericColE}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColF}}{\newlength{\gnumericColF}}{}\settowidth{\gnumericColF}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColG}}{\newlength{\gnumericColG}}{}\settowidth{\gnumericColG}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
@@ -154,6 +155,7 @@
 \ifthenelse{\isundefined{\gnumericColI}}{\newlength{\gnumericColI}}{}\settowidth{\gnumericColI}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
 
 \begin{tabular}[c]{%
+	b{\gnumericColD}%
 	b{\gnumericColE}%
 	b{\gnumericColF}%
 	b{\gnumericColG}%
@@ -197,8 +199,10 @@
 %	\endlastfoot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hhline{|-|-|-|-|-}
-	 \multicolumn{1}{|p{\gnumericColE}|}%
+\hhline{|-|-|-|-|-|-}
+     \multicolumn{1}{|p{\gnumericColD}|}%
+     {\gnumericPB{\centering}\gnumbox{House}}
+	 &\multicolumn{1}{|p{\gnumericColE}|}%
 	{\gnumericPB{\centering}\gnumbox{A}}
 	&\multicolumn{1}{p{\gnumericColF}|}%
 	{\gnumericPB{\centering}\gnumbox{B}}
@@ -209,8 +213,10 @@
 	&\multicolumn{1}{p{\gnumericColI}|}%
 	{\gnumericPB{\centering}\gnumbox{E}}
 \\
-\hhline{|-----|}
-	 \multicolumn{1}{|p{\gnumericColE}|}%
+\hhline{|------|}
+    \multicolumn{1}{|p{\gnumericColD}|}%
+    {\gnumericPB{\centering}\gnumbox{Students}}
+	 &\multicolumn{1}{|p{\gnumericColE}|}%
 	{\gnumericPB{\centering}\gnumbox{4}}
 	&\multicolumn{1}{p{\gnumericColF}|}%
 	{\gnumericPB{\centering}\gnumbox{8}}
@@ -221,7 +227,7 @@
 	&\multicolumn{1}{p{\gnumericColI}|}%
 	{\gnumericPB{\centering}\gnumbox{4}}
 \\
-\hhline{|-|-|-|-|-|}
+\hhline{|-|-|-|-|-|-|}
 \end{tabular}
 
 \ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{\languagename}}
