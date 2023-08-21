@@ -264,6 +264,7 @@ EE22BTECH11036
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+\newcommand\tabref{Table~\ref}
 %\renewcommand{\theequation}{\theenumi}
 
 %\begin{abstract}
@@ -305,30 +306,25 @@ selected student is not from A, B and C is \\
   \caption{Student distribution in each house}
   \label{tab:Table1}
   \end{table}
-  Total no of students=23
-
-  With reference to Table.~\ref{tab:Table1}
-\begin{align} 
-  \notag\pr{A}&=\frac{4}{23},
-  \pr{B}=\frac{8}{23},
-  \pr{C}=\frac{5}{23}\\
-  \pr{D}&=\frac{2}{23}.
-  \pr{E}=\frac{4}{23}
-  \end{align}
-  W=student selected is not from A,B and C
+Total no of students=23
 \begin{align}
-  \implies W=A^{\prime}B^{\prime}C^{\prime}
-\end{align} 
-By DeMorgan's Law and Axiom 3 of probability
-\begin{align} 
-   \pr{{A^{\prime}}B^{\prime}C^{\prime}}= \pr{{\brak{A+B+C}^{\prime}}}\\
-   \pr{{\brak{A+B+C}^{\prime}}}=1-\pr{\brak{A+B+C}}\\
-   \pr{A+B+C}= \pr{A}+\pr{B}+\pr{C}\\
-  \pr{A+B+C}=\frac{4}{23}+\frac{8}{23}+\frac{5}{23}=\frac{17}{23}\\
-  \pr{A^{\prime}B^{\prime}C^{\prime}}=1-\frac{17}{23}=\frac{6}{23}
-  \end{align}
-  Therefore,probability of not selecting a student from A,B and C is,
-   \begin{align}
-    \pr{W}&=\frac{6}{23}
+    X=\begin{cases}
+        0,& \text{if student is from A,B and C}\\
+        1,& \text{if student is not from A,B and C}
+    \end{cases}
+\end{align}
+With reference to \tabref{tab:Table1}
+\begin{align}
+    p_X\brak{0}&=\pr{A}+\pr{B}+\pr{C}\\
+    &=\frac{4}{23}+\frac{8}{23}+\frac{5}{23}\\
+    &=\frac{17}{23}\\
+    p_X\brak{1}&=1-p_X\brak{0}\\
+    &=1-\frac{17}{23}\\
+    &=\frac{6}{23}
+\end{align}
+
+Therefore,probabilty of not selecing a student from A,B and C is
+\begin{align}
+    p_X\brak{1}&=\frac{6}{23}
 \end{align}
 \end{document}
