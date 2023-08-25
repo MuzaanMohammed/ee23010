@@ -125,7 +125,7 @@
 \setlength\gnumericTableWidth{%
 	75pt+%
 	75pt+%
-	75pt+%
+	120pt+%
 	75pt+%
 0pt}
 \def\gumericNumCols{4}
@@ -148,7 +148,7 @@
 
 \ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{120pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
 
 \begin{tabular}[c]{%
@@ -205,7 +205,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{D}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(-3.5,-0.5)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{-3.5\\-0.5}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Midpoint of BC}}
 	&
@@ -214,7 +214,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{E}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(-2,-2)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{-2\\-2}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Midpoint of AC}}
 	&
@@ -223,7 +223,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{F}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(-0.5,0.5)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{-0.5\\0.5}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Midpoint of AB}}
 	&
@@ -232,7 +232,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{N1}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(0.5,4.5)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{0.5\\4.5}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
 	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
@@ -253,7 +253,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{N2}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(-4,0)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{-4\\0}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
 	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
@@ -274,7 +274,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{N3}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(3.5,-4.5)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{3.5\\-4.5}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
 	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
@@ -295,7 +295,7 @@
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{G}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{(-2,-0.67)}}
+	{\gnumericPB{\centering}\gnumbox{\myvec{-2\\-0.67}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Centroid}}
 	&

@@ -72,5 +72,4 @@ plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
-
 plt.savefig("Triangle.png",bbox_inches='tight')

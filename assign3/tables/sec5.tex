@@ -125,8 +125,8 @@
 \setlength\gnumericTableWidth{%
 	75pt+%
 	75pt+%
-	130pt+%
-	75pt+%
+	200pt+%
+	80pt+%
 0pt}
 \def\gumericNumCols{4}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
@@ -146,16 +146,16 @@
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\isundefined{\gnumericColK}}{\newlength{\gnumericColK}}{}\settowidth{\gnumericColK}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColL}}{\newlength{\gnumericColL}}{}\settowidth{\gnumericColL}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColM}}{\newlength{\gnumericColM}}{}\settowidth{\gnumericColM}{\begin{tabular}{@{}p{130pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColN}}{\newlength{\gnumericColN}}{}\settowidth{\gnumericColN}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{200pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{80pt*\gnumericScale}@{}}x\end{tabular}}
 
 \begin{tabular}[c]{%
-	b{\gnumericColK}%
-	b{\gnumericColL}%
-	b{\gnumericColM}%
-	b{\gnumericColN}%
+	b{\gnumericColA}%
+	b{\gnumericColB}%
+	b{\gnumericColC}%
+	b{\gnumericColD}%
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -193,174 +193,165 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hhline{|-|-|-~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Parameters}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Value}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Description}}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Parameter}}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Value}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Description}}}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{m1}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\myvec{-3\\3}}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Slope of AB}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{m2}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\myvec{-3\\-5}}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Slope of BC}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{m3}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\myvec{6\\2}}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Slope of CA}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\norm{\vec{B}-\vec{A}}}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{4.24}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Length of AB}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\norm{\vec{C}-\vec{B}}}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{5.83}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Length of BC}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\norm{\vec{A}-\vec{C}}}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{6.32}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Length of CA}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Rank}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{3}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Non-collinear}}
-	&
-\\
-\hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{n1}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{(3,3)}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{n1}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{0.39 \\1.66}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColM}%
+	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
 	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}\gnumbox[l]{AB}}}}
+	 \gnumericPB{\centering}\gnumbox{AI}}}}
 	&
 \\
 \hhline{|--|~~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{c1}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{0}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{c1}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{-1.265}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
 	{}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{n2}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{(-5,3)}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{n2}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{-1.56\\-0.19}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColM}%
+	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
 	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}\gnumbox[l]{BC}}}}
+	 \gnumericPB{\centering}\gnumbox{BI}}}}
 	&
 \\
 \hhline{|--|~~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{c2}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{-8}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{c2}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{2.744}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
 	{}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{n3}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{(2,-6)}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{n3}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{1.17 \\-1.46}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColM}%
+	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
 	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}\gnumbox[l]{CA}}}}
+	 \gnumericPB{\centering}\gnumbox{CI}}}}
 	&
 \\
 \hhline{|--|~~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{c3}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{8}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{c3}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{-1.479}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
 	{}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Area}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{12}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Area of Triangle}}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{I}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{-1.71\\-0.36}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Incentre}}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\angle A}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{$63.4349\degree$}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$\angle BAC$}}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{\angle BAI}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$31.7174\degree$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{\angle BAI}}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\angle B}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{$75.9637 \degree$}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\angle CBA}}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{\angle CAI}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$31.7174\degree$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{\angle CAI}}
 	&
 \\
 \hhline{|---|~}
-	 \multicolumn{1}{|p{\gnumericColK}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\angle C}}
-	&\multicolumn{1}{p{\gnumericColL}|}%
-	{\gnumericPB{\raggedleft}\gnumbox[r]{$40.6013\degree$}}
-	&\multicolumn{1}{p{\gnumericColM}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\angle BCA}}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{a}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{1.4636}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{ID3}}
+	&
+\\
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{b}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{1.4636}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{IF3}}
+	&
+\\
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{c}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{1.4636}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{IE3}}
+	&
+\\
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{r}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{1.4636}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Inradius}}
+	&
+\\
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{D3}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{-2.96\\0.39}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Tangency point\brak{BC}}}
+	&
+\\
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{E3}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{-0.67\\0.67}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Tangency point\brak{AB}}}
+	&
+\\
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{F3}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\myvec{-1.25\\-1.75}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Tangency point\brak{AC}}}
 	&
 \\
 \hhline{|-|-|-|~}
