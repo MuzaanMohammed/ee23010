@@ -1,3 +1,5 @@
+#CODE BY Muzaan Mohammed Faizel A P
+#EE22BTECH11036
 import numpy as np
 
 # Array representing the number of members in the council
