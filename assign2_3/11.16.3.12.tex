@@ -304,9 +304,9 @@ Check whether the following probabilities \pr{A} and \pr{B} are consistently def
     \item  \pr{A} = 0.5,\pr{B} = 0.4, \pr{A+B} = 0.8
 \end{enumerate}
 \solution
-The given probabilities are consistently defined if it satisfies Axiom 1 and 
-the addition property:
+The given probabilities are consistently defined if it satisfies the following properties:
 \begin{align}
+    \pr{AB}\leq \pr{A},\pr{B} \label{eq:3}\\
     0\leq\pr{A},\pr{B},\pr{AB},\pr{A+B}\leq1 \label{eq:1}\\
     \pr{A+B}=\pr{A}+\pr{B}-\pr{AB} \label{eq:2}
 \end{align}
@@ -317,13 +317,11 @@ the addition property:
     \pr{B} = 0.7,\\
     \pr{AB} = 0.6
     \end{align}
-    From \eqref{eq:2}, 
+    Since 
     \begin{align}
-        \pr{A+B}&=0.5+0.7-0.6\\
-        &=0.6
+        \pr{AB} \geq \pr{A}
     \end{align}
-    This also satisfies \eqref{eq:1},\\
-    Therefore \pr{A} and \pr{B} are consistently defined.
+    \pr{A} and \pr{B} are not consistently defined.
     \item Given:
     \begin{align} 
     \pr{A} = 0.5,\\
@@ -335,7 +333,7 @@ the addition property:
         \pr{AB}&=0.5+0.4-0.8\\
         &=0.1
     \end{align}
-    This also satisfies \eqref{eq:1},\\
+    This also satisfies \eqref{eq:3} and \eqref{eq:1}\\
     Therefore \pr{A} and \pr{B} are consistently defined.
 
 \end{enumerate}
