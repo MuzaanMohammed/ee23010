@@ -310,6 +310,13 @@ The given probabilities are consistently defined if it satisfies the following p
     0\leq\pr{A},\pr{B},\pr{AB},\pr{A+B}\leq1 \label{eq:1}\\
     \pr{A+B}=\pr{A}+\pr{B}-\pr{AB} \label{eq:2}
 \end{align}
+Proof of \eqref{eq:3}:
+\begin{align}
+    \pr{A|B}=\frac{\pr{AB}}{\pr{B}}\leq1\\
+    \implies \pr{AB}\leq\pr{B}\\
+    \text{On Interchanging A and B,we get}:\\
+    \implies \pr{AB}\leq\pr{A}
+\end{align}
     \begin{enumerate}
     \item Given:
     \begin{align} 
