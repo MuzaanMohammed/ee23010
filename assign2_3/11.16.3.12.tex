@@ -312,10 +312,11 @@ The given probabilities are consistently defined if it satisfies the following p
 \end{align}
 Proof of \eqref{eq:3}:
 \begin{align}
-    \pr{A|B}=\frac{\pr{AB}}{\pr{B}}\leq1\\
-    \implies \pr{AB}\leq\pr{B}\\
+	\pr{A}=\pr{A\brak{B+B^{\prime}}}\\
+	\implies \pr{A}=\pr{AB}+\pr{AB^{\prime}}\\
+	\text{Therefore,} \pr{AB}\leq\pr{A}\\
     \text{On Interchanging A and B,we get}:\\
-    \implies \pr{AB}\leq\pr{A}
+    \pr{AB}\leq\pr{B}
 \end{align}
     \begin{enumerate}
     \item Given:
