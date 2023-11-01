@@ -18,13 +18,8 @@ unsigned long long binomialCoefficient(int n, int k) {
     return result;
 }
 
-// Function to calculate probability P(X = k)
-double probability(int n, double p, int k) {
-    return binomialCoefficient(n, k) * pow(p, k) * pow(1.0 - p, n - k);
-}
-
-// Function to generate a random binomial variable and calculate its probability, expectation, and variance
-void generateAndCalculateProbabilityExpectationVariance(int n, double p) {
+// Function to generate a binomial random variable
+int generateBinomialRandomVariable(int n, double p) {
     int count = 0;
 
     for (int i = 0; i < n; i++) {
@@ -34,15 +29,12 @@ void generateAndCalculateProbabilityExpectationVariance(int n, double p) {
         }
     }
 
-    int randomBinomialVariable = count;
-    double expectation = n * p;
-    double variance = n * p * (1 - p);
-    double probK = probability(n, p, randomBinomialVariable);
+    return count;
+}
 
-    printf("Generated Binomial Random Variable: %d\n", randomBinomialVariable);
-    printf("Probability P(X = %d) = %.6f\n", randomBinomialVariable, probK);
-    printf("Expectation (Mean) E(X) = %.6f\n", expectation);
-    printf("Variance Var(X) = %.6f\n", variance);
+// Function to calculate probability P(X = k)
+double probability(int n, double p, int k) {
+    return binomialCoefficient(n, k) * pow(p, k) * pow(1.0 - p, n - k);
 }
 
 int main() {
@@ -58,13 +50,22 @@ int main() {
 
     printf("Enter the value of p (between 0 and 1): ");
     scanf("%lf", &p);
+    int randomBinomialVariable = generateBinomialRandomVariable(n, p);
+    double expectation = n * p;
+    double variance = n * p * (1 - p);
+    double probK = probability(n, p, randomBinomialVariable);
 
-    if (p < 0 || p > 1) {
-        printf("Invalid value of p. It should be between 0 and 1.\n");
-        return 1; // Exit with an error code
-    }
+    printf("Generated Binomial Random Variable: %d\n", randomBinomialVariable);
+    printf("Probability P(X = %d) = %.6f\n", randomBinomialVariable, probK);
+    printf("Expectation (Mean) E(X) = %.6f\n", expectation);
+    printf("Variance Var(X) = %.6f\n", variance);
+    if (abs(expectation) <= abs(variance)) {
+    printf("This distribution is not a binomial distribution .\n");
+} else {
+    printf("This distribution is a binomial distribution.\n");
+}
 
-    generateAndCalculateProbabilityExpectationVariance(n, p);
+    
 
     return 0;
 }
