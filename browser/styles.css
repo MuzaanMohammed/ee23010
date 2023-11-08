@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff0000, #000000);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e64000;
+}
+
+/* audio {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+} */
+
+audio {
+    width: 100%;
+    max-width: 400px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    
+}
+
+/* Style the audio controls */
+audio::-webkit-media-controls {
+    background-color:red ;
+}
+
+audio::-webkit-media-controls-play-button {
+    color: #fff;
+}
+
+/* Styling for the "Your browser does not support the audio element" message */
+audio::before {
+    content: "Your browser does not support the audio element.";
+    display: block;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Styling for the buttons like in Apple Music */
+
+#randomButton {
+    background-color: #007aff;
+}
