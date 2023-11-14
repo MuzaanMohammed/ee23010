@@ -3,38 +3,18 @@
 #include <time.h>
 #include <math.h>
 
-// Function to calculate binomial coefficient (n choose k)
-unsigned long long binomialCoefficient(int n, int k) {
-    if (k < 0 || k > n) {
-        return 0;
-    }
-
-    unsigned long long result = 1;
-    for (int i = 0; i < k; i++) {
-        result *= (n - i);
-        result /= (i + 1);
-    }
-
-    return result;
-}
-
-// Function to generate a binomial random variable
+// Function to generate a binomial random variable using uniform distribution
 int generateBinomialRandomVariable(int n, double p) {
     int count = 0;
 
     for (int i = 0; i < n; i++) {
-        double randomValue = (double)rand() / RAND_MAX; // Generate a random number between 0 and 1
-        if (randomValue <= p) {
+        double u = (double)rand() / RAND_MAX; // Generate a uniform random variable between 0 and 1
+        if (u <= p) {
             count++;
         }
     }
 
     return count;
-}
-
-// Function to calculate probability P(X = k)
-double probability(int n, double p, int k) {
-    return binomialCoefficient(n, k) * pow(p, k) * pow(1.0 - p, n - k);
 }
 
 int main() {
@@ -50,22 +30,45 @@ int main() {
 
     printf("Enter the value of p (between 0 and 1): ");
     scanf("%lf", &p);
-    int randomBinomialVariable = generateBinomialRandomVariable(n, p);
-    double expectation = n * p;
-    double variance = n * p * (1 - p);
-    double probK = probability(n, p, randomBinomialVariable);
 
-    printf("Generated Binomial Random Variable: %d\n", randomBinomialVariable);
-    printf("Probability P(X = %d) = %.6f\n", randomBinomialVariable, probK);
-    printf("Expectation (Mean) E(X) = %.6f\n", expectation);
-    printf("Variance Var(X) = %.6f\n", variance);
-    if (abs(expectation) <= abs(variance)) {
-    printf("This distribution is not a binomial distribution .\n");
-} else {
-    printf("This distribution is a binomial distribution.\n");
-}
+    // Number of simulations
+    int numSimulations = 100000; // Adjust the number of simulations as needed
 
-    
+    double sum = 0.0;
+    double sumSquares = 0.0;
+
+    for (int i = 0; i < numSimulations; i++) {
+        int randomBinomialVariable = generateBinomialRandomVariable(n, p);
+        double value = (double)randomBinomialVariable;
+        sum += value;
+        sumSquares += value * value;
+    }
+
+    double simulatedMean = sum / numSimulations;
+    double simulatedVariance = sumSquares / numSimulations - simulatedMean * simulatedMean;
+
+    printf("Simulated Mean: %.6f\n", simulatedMean);
+    printf("Simulated Variance: %.6f\n", simulatedVariance);
+    if (simulatedMean > simulatedVariance) {
+            printf("Simulated Mean is always greater than Simulated Variance.\n");
+        } else {
+            printf("Simulated Mean is NOT always greater than Simulated Variance.\n");
+        }
+    // Compare with four given options
+    for (int n=1; n < 5; n++) {
+        double optionMean, optionVariance;
+        printf("Enter the mean: ");
+        scanf("%lf", &optionMean);
+
+        printf("Enter the variance: ");
+        scanf("%lf", &optionVariance);
+        // Compare the simulated values with the current option
+        if (optionMean>optionVariance) {
+            printf("valid binomial distribution");
+        } else {
+                printf(" invalid binomial distribution");
+        }
+    }
 
     return 0;
 }
