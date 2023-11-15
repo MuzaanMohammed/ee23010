@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Audio Player</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Audio Player</title>
 
-<style>
+        <style>
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #ff0000, #000000);
@@ -81,24 +81,46 @@ audio::before {
     background-color: #007aff;
 }
 </style>
-</head>
-<body>
-    <h1>Audio Player</h1>
-    
-    <div class="controls">
-        <button id="playPauseButton">Play</button>
-        <button id="randomButton">Random</button>
-    </div>
-    
-    <audio id="audioPlayer" controls>
-        Your browser does not support the audio element.
-    </audio>
+    </head>
+    <body>
+        <h1>Audio Player</h1>
 
-    <script>
+        <div class="controls">
+            <button id="playPauseButton">Play</button>
+            <button id="randomButton">Random</button>
+        </div>
+
+        <audio id="audioPlayer" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <ol id="songs" style="height: 400px; overflow: scroll"></ol>
+
+        <script>
+        window.onload = get_songs;
+        
         const audioPlayer = document.getElementById('audioPlayer');
         const randomButton = document.getElementById('randomButton');
         const playPauseButton = document.getElementById('playPauseButton');
+        const songsList = document.getElementById('songs');
+        let nowplaying;
 
+        function get_songs() {
+            fetch('http://127.0.0.1:5000/songs')
+                .then(response => response.json())
+                .then(data => {
+                    // Assuming the response data is an array of file names
+                    songsList.innerHTML = '';
+                    nowplaying = data;
+                    data.forEach(fileName => {
+                        const listItem = document.createElement('li');
+                        listItem.style.height = '30px';
+                        listItem.textContent = fileName;
+                        songsList.appendChild(listItem);
+                    });
+                    playNextSong(0);
+                })
+                .catch(error => console.error('Error fetching songs:', error));
+        }
 
         playPauseButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
@@ -110,7 +132,32 @@ audio::before {
             }
         });
 
-        randomButton.addEventListener('click', () => {
+        randomButton.addEventListener('click', () => {get_songs()})
+
+        function playNextSong(index) {
+            if (index < nowplaying.length) {
+                const songName = nowplaying[index];
+        
+                fetch(`http://127.0.0.1:5000/play?songname=${songName}`)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const blobUrl = URL.createObjectURL(blob);
+                        audioPlayer.src = blobUrl;
+                        audioPlayer.load();
+                        audioPlayer.play();
+                    })
+                    .catch(error => console.error(`Error fetching audio for ${songName}:`, error))
+                    .finally(() => {
+                        // Wait for the current song to finish playing before playing the next one
+                        audioPlayer.onended = () => {
+                            playNextSong(index + 1);
+                        };
+                    });
+            }
+        }
+        
+        // Start playing the songs
+    /*  randomButton.addEventListener('click', () => {
             fetch('http://127.0.0.1:5000/play')
                 .then(response => response.blob())
                 .then(blob => {
@@ -120,7 +167,7 @@ audio::before {
                     audioPlayer.play();
                 })
                 .catch(error => console.error('Error fetching random audio:', error));
-        });
+        });  */
     </script>
-</body>
+    </body>
 </html>
