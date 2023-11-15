@@ -5,7 +5,7 @@ import random
 
 app = Flask(__name__)
 CORS(app) 
-audio_folder = "/home/muzz11/Desktop/assign1/browser/audio"
+audio_folder = "audio"
 
 @app.route('/play')
 def play_random_audio():
@@ -15,6 +15,11 @@ def play_random_audio():
 
     random_audio = random.choice(audio_files)
     return send_file(os.path.join(audio_folder, random_audio))
+
+@app.route('/app')
+def static_file():
+    return send_file("index2.html")
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
