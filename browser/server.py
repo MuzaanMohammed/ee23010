@@ -3,10 +3,9 @@ from flask_cors import CORS
 import os
 import random
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app) 
 audio_folder = "audio"
-
 
 @app.route('/play')
 def play_random_audio():
@@ -33,5 +32,6 @@ def get_songs():
     random.shuffle(audio_files)
     return audio_files
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
