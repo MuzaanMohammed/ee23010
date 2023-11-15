@@ -136,5 +136,21 @@ Therefore,
 \begin{align} 
 	Var\brak{X}\leq E\brak{X}
 \end{align}
-From the four options,the statement that cannot be true is option \brak{3}
+From the four options,the statement that cannot be true is option \brak{3}\\
+
+\textbf{Simulation steps}\\
+\textbf{Step 1: Generate a Range of Probabilities}\\
+The program generates a range of probabilities (\(p\)) in increments of 0.0098, ranging from 0.01 to 0.99. This range is used to create different binomial distributions for subsequent calculations.
+\\
+\textbf{Step 2: Calculate Variances for Each Probability}\\
+For each probability (\(p\)) in the generated range, the program generates a binomial random variable using the given mean and the inverse of the probability (\(mean/p\)) from uniform distribution. It then calculates the variance of the generated binomial random variable.\\
+\textbf{Step 3: Find Maximum and Minimum Variances}\\
+After calculating variances for each probability, the program identifies the maximum and minimum variances in the generated set.\\
+
+\textbf{Step 4: User Input}\\
+The program prompts the user to input a variance value for validation.
+\\
+\textbf{Step 5: Check Validity}\\
+The user-input variance is compared against the computed maximum and minimum variances. If the input variance falls within this range (inclusive of the minimum and exclusive of the maximum), the program outputs "Valid." Otherwise, it outputs "Invalid."
+\\
 \end{document}
